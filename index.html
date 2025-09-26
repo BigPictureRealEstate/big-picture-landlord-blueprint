@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Self-Managing Landlord Mastery</title>
+<title>CourseName — Self-Managing Landlord Mastery</title>
 <meta name="description" content="Practical course for self-managing landlords — templates, checklists, and step-by-step workflows." />
 <style>
 :root { --indigo:#4f46e5; --muted:#6b7280; --bg:#f8fafc; --card:#fff; }
@@ -38,7 +38,7 @@ nav a{color:var(--muted);margin-left:16px;text-decoration:none;font-size:14px}
 <div class="container">
   <header class="header">
     <div class="brand">
-      <div class="logo">SL</div>
+      <div class="logo">OC</div>
       <div>
         <div style="font-weight:700">Self-Managing Landlord Mastery</div>
         <div style="font-size:13px;color:var(--muted)">Practical course for self-managing landlords</div>
@@ -77,7 +77,8 @@ nav a{color:var(--muted);margin-left:16px;text-decoration:none;font-size:14px}
       </div>
 
       <div class="right card">
-        <div class="stats">
+        <div style="height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eef2ff,#eef6ff);border-radius:10px">Promo image / video</div>
+        <div class="stats" style="margin-top:12px">
           <div style="padding:8px;background:white;border-radius:8px;border:1px solid #f1f5f9"><div class="small">Duration</div><div style="font-weight:600">6 weeks</div></div>
           <div style="padding:8px;background:white;border-radius:8px;border:1px solid #f1f5f9"><div class="small">Level</div><div style="font-weight:600">Beginner → Pro</div></div>
           <div style="padding:8px;background:white;border-radius:8px;border:1px solid #f1f5f9"><div class="small">Format</div><div style="font-weight:600">Videos + Worksheets</div></div>
@@ -86,8 +87,54 @@ nav a{color:var(--muted);margin-left:16px;text-decoration:none;font-size:14px}
       </div>
     </section>
 
-    <!-- curriculum, instructor, pricing, faq remain unchanged -->
-    <!-- ... keep all the rest of your sections exactly as before ... -->
+    <section id="curriculum" style="margin-top:28px">
+      <h2 style="margin:0 0 8px 0">Curriculum</h2>
+      <p class="small">High-level modules — each includes short videos, worksheets and templates.</p>
+      <div class="module-list">
+        <div class="module"><strong>Module 1 — Foundations</strong><div class="small" style="margin-top:6px">Set up operations, tenant onboarding, basics of maintenance.</div></div>
+        <div class="module"><strong>Module 2 — Tools & Workflow</strong><div class="small" style="margin-top:6px">Maintenance logs, tenant communication, templates.</div></div>
+        <div class="module"><strong>Module 3 — Routine Maintenance</strong><div class="small" style="margin-top:6px">Preventive checklists, scheduling, vendor coordination.</div></div>
+        <div class="module"><strong>Module 4 — Turnovers & Repairs</strong><div class="small" style="margin-top:6px">Efficient turnovers, cost control, estimates.</div></div>
+        <div class="module"><strong>Module 5 — Scaling</strong><div class="small" style="margin-top:6px">Add units, hire subcontractors, subscription revenue.</div></div>
+        <div class="module"><strong>Module 6 — Templates & Next Steps</strong><div class="small" style="margin-top:6px">Downloadable checklists, vendor scripts, roadmap.</div></div>
+      </div>
+    </section>
+
+    <section id="instructor" style="margin-top:26px;display:flex;gap:18px;align-items:flex-start">
+      <div style="flex:2" class="card">
+        <h3 style="margin:0 0 6px 0">About the instructor</h3>
+        <p class="small">Tony S. — facilities, real estate & trades background. Built the workflows in this course to remove guesswork and save hours each week.</p>
+        <ul class="small" style="margin-top:12px">
+          <li>Actionable templates you can use immediately</li>
+          <li>Checklists for inspections & turnovers</li>
+          <li>Community support and live Q&A</li>
+        </ul>
+      </div>
+
+      <aside style="flex:1" class="card">
+        <h4 style="margin:0 0 6px 0">Testimonials</h4>
+        <blockquote class="small">“Saved me time and money — the templates work.”</blockquote>
+        <blockquote class="small">“Practical and to the point.”</blockquote>
+      </aside>
+    </section>
+
+    <section id="pricing" style="margin-top:26px">
+      <h2 style="margin:0 0 8px 0">Pricing</h2>
+      <p class="small">One-time payment or 3-pay plan. 30-day money-back guarantee.</p>
+      <div style="display:grid;grid-template-columns:repeat(1,1fr);gap:12px;margin-top:12px">
+        <div class="card"><strong>Basic — $49</strong><div class="small">Core videos + worksheets</div><div style="margin-top:8px"><button class="btn btn-primary" onclick="buy('Basic - $49')">Buy Basic</button></div></div>
+        <div class="card" style="border:2px solid #eef2ff"><strong>Popular — $129</strong><div class="small">Templates, bonus module, community</div><div style="margin-top:8px"><button class="btn btn-primary" onclick="buy('Popular - $129')">Buy Popular</button></div></div>
+        <div class="card"><strong>Pro — $399</strong><div class="small">Everything + 1:1 coaching</div><div style="margin-top:8px"><button class="btn btn-primary" onclick="buy('Pro - $399')">Buy Pro</button></div></div>
+      </div>
+    </section>
+
+    <section id="faq" style="margin-top:26px">
+      <h3 style="margin:0 0 8px 0">FAQ</h3>
+      <div class="card">
+        <p class="small"><strong>Who is this for?</strong> Small landlords and DIY property managers who want repeatable operations.</p>
+        <p class="small"><strong>How long do I have access?</strong> Lifetime access + updates.</p>
+      </div>
+    </section>
 
   </main>
 
@@ -108,13 +155,13 @@ function sendMail(e){
   let body = 'Please add me to the waitlist.\\n\\n';
   if(name) body += 'Name: ' + name + '\\n';
   body += 'Email: ' + email + '\\n';
-  const mailto = 'mailto:YOUR_EMAIL_HERE?subject=' + encodeURIComponent('Waitlist: Self-Managing Landlord Mastery') + '&body=' + encodeURIComponent(body);
+  const mailto = 'mailto:bigpicturerealestate1@gmail.com?subject=' + encodeURIComponent('Waitlist: Self-Managing Landlord Mastery') + '&body=' + encodeURIComponent(body);
   window.location.href = mailto;
   document.getElementById('msg').textContent='Opening your email app...';
 }
 
 function copyEmail(){
-  const email = 'YOUR_EMAIL_HERE';
+  const email = 'bigpicturerealestate1@gmail.com';
   navigator.clipboard?.writeText(email).then(()=> {
     document.getElementById('msg').textContent='Email copied — paste into your email app.';
   }, ()=> {
@@ -124,7 +171,7 @@ function copyEmail(){
 
 function buy(plan){
   let body = 'I want to buy the ' + plan + '.\\n\\nName:\\nEmail:\\n';
-  window.location.href = 'mailto:YOUR_EMAIL_HERE?subject=' + encodeURIComponent('Buy: ' + plan) + '&body=' + encodeURIComponent(body);
+  window.location.href = 'mailto:bigpicturerealestate1@gmail.com?subject=' + encodeURIComponent('Buy: ' + plan) + '&body=' + encodeURIComponent(body);
 }
 </script>
 </body>
