@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Self-Managing Landlord Mastery</title>
-<meta name="description" content="Professional course for self-managing landlords — templates, checklists, and profit-focused strategies." />
+<meta name="description" content="Practical course for self-managing landlords — templates, checklists, and step-by-step workflows." />
 <style>
 :root { --indigo:#4f46e5; --muted:#6b7280; --bg:#f8fafc; --card:#fff; }
-*{box-sizing:border-box} body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:#f8fafc;color:#111}
+*{box-sizing:border-box} body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:linear-gradient(180deg,#fff,#f1f5f9);color:#111}
 .container{max-width:980px;margin:0 auto;padding:28px}
 .header{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:12px}
@@ -32,13 +32,14 @@ nav a{color:var(--muted);margin-left:16px;text-decoration:none;font-size:14px}
 .input{padding:10px;border-radius:8px;border:1px solid #e6eefb;flex:1}
 .small{font-size:13px;color:var(--muted)}
 .footer{margin-top:40px;padding-top:20px;border-top:1px solid #eef2f7;display:flex;justify-content:space-between;align-items:center}
+img.responsive{max-width:100%;height:auto;border-radius:12px}
 </style>
 </head>
 <body>
 <div class="container">
   <header class="header">
     <div class="brand">
-      <div class="logo">LM</div>
+      <div class="logo">OC</div>
       <div>
         <div style="font-weight:700">Self-Managing Landlord Mastery</div>
         <div style="font-size:13px;color:var(--muted)">Practical course for self-managing landlords</div>
@@ -52,6 +53,7 @@ nav a{color:var(--muted);margin-left:16px;text-decoration:none;font-size:14px}
       <div class="left">
         <h1 class="title">Turn busy buildings into smooth, profitable rentals <span style="color:var(--indigo)">— without the headache</span></h1>
         <p class="subtitle">Step-by-step lessons, templates, and checklists you can use this week. Lifetime access + downloads.</p>
+        <img src="property.jpg" alt="Beautiful property" class="responsive" style="margin-top:12px" />
 
         <div class="cta">
           <button class="btn btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">See pricing</button>
@@ -60,63 +62,63 @@ nav a{color:var(--muted);margin-left:16px;text-decoration:none;font-size:14px}
 
         <!-- Join form -->
         <div style="margin-top:18px">
-          <form id="waitlist" action="https://formspree.io/f/yourFormID" method="POST" class="card">
-            <label class="small">Join the waitlist — we'll notify you by email when enrollment opens</label>
+          <form id="waitlist" onsubmit="sendMail(event)" class="card" aria-label="Join waitlist form">
+            <label class="small">Join the waitlist — we'll email when enrollment opens</label>
             <div style="margin-top:8px" class="form-row">
-              <input name="name" class="input" placeholder="Your name (optional)">
-              <input name="email" class="input" placeholder="Email address" required type="email">
+              <input id="name" class="input" placeholder="Your name (optional)">
+              <input id="email" class="input" placeholder="Email address" required type="email">
             </div>
-            <div style="margin-top:10px">
+            <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
               <button type="submit" class="btn btn-primary">Join waitlist</button>
+              <button type="button" class="btn" onclick="copyEmail()">Copy contact email</button>
+              <span id="msg" class="small" style="margin-left:8px;color:var(--muted)"></span>
             </div>
+            <p class="small" style="margin-top:8px">This will open your email app. If it doesn’t, copy the email address and send a message saying you’d like to join the waitlist.</p>
           </form>
         </div>
       </div>
 
       <div class="right card">
-        <img src="promo-image.jpg" alt="Promo image" style="width:100%;border-radius:10px;height:200px;object-fit:cover">
+        <img src="promo.jpg" alt="Promo image" class="responsive" />
         <div class="stats" style="margin-top:12px">
-          <div><div class="small">Duration</div><div style="font-weight:600">6 weeks</div></div>
-          <div><div class="small">Level</div><div style="font-weight:600">Beginner → Pro</div></div>
-          <div><div class="small">Format</div><div style="font-weight:600">Videos + Worksheets</div></div>
-          <div><div class="small">Access</div><div style="font-weight:600">Lifetime</div></div>
+          <div style="padding:8px;background:white;border-radius:8px;border:1px solid #f1f5f9"><div class="small">Duration</div><div style="font-weight:600">6 weeks</div></div>
+          <div style="padding:8px;background:white;border-radius:8px;border:1px solid #f1f5f9"><div class="small">Level</div><div style="font-weight:600">Beginner → Pro</div></div>
+          <div style="padding:8px;background:white;border-radius:8px;border:1px solid #f1f5f9"><div class="small">Format</div><div style="font-weight:600">Videos + Worksheets</div></div>
+          <div style="padding:8px;background:white;border-radius:8px;border:1px solid #f1f5f9"><div class="small">Access</div><div style="font-weight:600">Lifetime</div></div>
         </div>
       </div>
-    </section>
-
-    <section style="margin-top:28px">
-      <img src="property-home.jpg" alt="Property image" style="width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.1)">
     </section>
 
     <section id="curriculum" style="margin-top:28px">
       <h2 style="margin:0 0 8px 0">Curriculum</h2>
       <p class="small">High-level modules — each includes short videos, worksheets and templates.</p>
       <div class="module-list">
-        <div class="module"><strong>Module 1 — Foundations</strong><div class="small">Set up operations, tenant onboarding, basics of maintenance.</div></div>
-        <div class="module"><strong>Module 2 — Tools & Workflow</strong><div class="small">Maintenance logs, tenant communication, templates.</div></div>
-        <div class="module"><strong>Module 3 — Routine Maintenance</strong><div class="small">Preventive checklists, scheduling, vendor coordination.</div></div>
-        <div class="module"><strong>Module 4 — Turnovers & Repairs</strong><div class="small">Efficient turnovers, cost control, estimates.</div></div>
-        <div class="module"><strong>Module 5 — Scaling</strong><div class="small">Add units, hire subcontractors, subscription revenue.</div></div>
-        <div class="module"><strong>Module 6 — Templates & Next Steps</strong><div class="small">Downloadable checklists, vendor scripts, roadmap.</div></div>
-        <div class="module"><strong>Module 7 — Profit & People</strong><div class="small">Hidden cost of deferred maintenance, handyman skills, profit-making renovations, landlord/tenant relationships.</div></div>
+        <div class="module"><strong>Module 1 — Foundations</strong><div class="small" style="margin-top:6px">Set up operations, tenant onboarding, basics of maintenance.</div></div>
+        <div class="module"><strong>Module 2 — Tools & Workflow</strong><div class="small" style="margin-top:6px">Maintenance logs, tenant communication, templates.</div></div>
+        <div class="module"><strong>Module 3 — Routine Maintenance</strong><div class="small" style="margin-top:6px">Preventive checklists, scheduling, vendor coordination.</div></div>
+        <div class="module"><strong>Module 4 — Turnovers & Repairs</strong><div class="small" style="margin-top:6px">Efficient turnovers, cost control, estimates.</div></div>
+        <div class="module"><strong>Module 5 — Advanced Insights</strong><div class="small" style="margin-top:6px">Deferred maintenance, handyman skills, profitable renovations, landlord/tenant relationship.</div></div>
+        <div class="module"><strong>Module 6 — Scaling</strong><div class="small" style="margin-top:6px">Add units, hire subcontractors, subscription revenue.</div></div>
+        <div class="module"><strong>Module 7 — Templates & Next Steps</strong><div class="small" style="margin-top:6px">Downloadable checklists, vendor scripts, roadmap.</div></div>
       </div>
     </section>
 
-    <section style="margin-top:26px">
-      <h2>Upload Your Modules</h2>
-      <p class="small">Upload course materials (videos, worksheets, slides).</p>
-      <input type="file" multiple>
+    <section id="uploads" style="margin-top:26px" class="card">
+      <h3>Upload Educational Modules</h3>
+      <p class="small">Upload your video lessons, PDFs, and worksheets here:</p>
+      <input type="file" multiple />
     </section>
 
     <section id="pricing" style="margin-top:26px">
-      <h2>Pricing</h2>
+      <h2 style="margin:0 0 8px 0">Pricing</h2>
       <p class="small">One-time payment or 3-pay plan. 30-day money-back guarantee.</p>
       <div style="display:grid;grid-template-columns:repeat(1,1fr);gap:12px;margin-top:12px">
-        <div class="card"><strong>Basic — $49</strong><div class="small">Core videos + worksheets</div><div style="margin-top:8px"><button class="btn btn-primary" onclick="window.location.href='https://buy.stripe.com/test_link_basic'">Buy Basic</button></div></div>
-        <div class="card" style="border:2px solid #eef2ff"><strong>Popular — $129</strong><div class="small">Templates, bonus module, community</div><div style="margin-top:8px"><button class="btn btn-primary" onclick="window.location.href='https://buy.stripe.com/test_link_popular'">Buy Popular</button></div></div>
-        <div class="card"><strong>Pro — $399</strong><div class="small">Everything + 1:1 coaching</div><div style="margin-top:8px"><button class="btn btn-primary" onclick="window.location.href='https://buy.stripe.com/test_link_pro'">Buy Pro</button></div></div>
+        <div class="card"><strong>Basic — $49</strong><div class="small">Core videos + worksheets</div><div style="margin-top:8px"><button class="btn btn-primary" onclick="buy('Basic - $49')">Buy Basic</button></div></div>
+        <div class="card" style="border:2px solid #eef2ff"><strong>Popular — $129</strong><div class="small">Templates, bonus module, community</div><div style="margin-top:8px"><button class="btn btn-primary" onclick="buy('Popular - $129')">Buy Popular</button></div></div>
+        <div class="card"><strong>Pro — $399</strong><div class="small">Everything + 1:1 coaching</div><div style="margin-top:8px"><button class="btn btn-primary" onclick="buy('Pro - $399')">Buy Pro</button></div></div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
@@ -127,6 +129,34 @@ nav a{color:var(--muted);margin-left:16px;text-decoration:none;font-size:14px}
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+
+function sendMail(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if(!email){document.getElementById('msg').textContent='Please enter your email.';return;}
+  let body = 'Please add me to the waitlist.\\n\\n';
+  if(name) body += 'Name: ' + name + '\\n';
+  body += 'Email: ' + email + '\\n';
+  const mailto = 'mailto:bigpicturerealestate1@gmail.com?subject=' + encodeURIComponent('Waitlist: Self-Managing Landlord Mastery') + '&body=' + encodeURIComponent(body);
+  window.location.href = mailto;
+  document.getElementById('msg').textContent='Opening your email app...';
+}
+
+function copyEmail(){
+  const email = 'bigpicturerealestate1@gmail.com';
+  navigator.clipboard?.writeText(email).then(()=> {
+    document.getElementById('msg').textContent='Email copied — paste into your email app.';
+  }, ()=> {
+    document.getElementById('msg').textContent='Could not copy automatically. Email: ' + email;
+  });
+}
+
+function buy(plan){
+  let body = 'I want to buy the ' + plan + '.\\n\\nName:\\nEmail:\\n';
+  window.location.href = 'mailto:bigpicturerealestate1@gmail.com?subject=' + encodeURIComponent('Buy: ' + plan) + '&body=' + encodeURIComponent(body);
+}
 </script>
 </body>
 </html>
+
